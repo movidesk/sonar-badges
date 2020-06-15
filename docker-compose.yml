@@ -1,7 +1,8 @@
 version: '3.8'
 services:
   sonar-badges:
-    image: ph1p/sonar-badges
+    # build: .
+    image: ph1p/sonar-badges:latest
     ports:
       - 8080:8080
     environment:
