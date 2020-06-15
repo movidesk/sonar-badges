@@ -1,6 +1,7 @@
 # Sonarqube Badges
-[![](https://images.microbadger.com/badges/image/ph1p/sonar-badges.svg)](https://microbadger.com/images/ph1p/sonar-badges)
-[![](https://images.microbadger.com/badges/version/ph1p/sonar-badges.svg)](https://microbadger.com/images/ph1p/sonar-badges)
+
+[![](https://images.microbadger.com/badges/image/ph1p/sonar-badges.svg)](https://hub.docker.com/repository/docker/ph1p/sonar-badges)
+[![](https://images.microbadger.com/badges/version/ph1p/sonar-badges.svg)](https://hub.docker.com/repository/docker/ph1p/sonar-badges)
 
 This small project offers you a way to get your sonarqube badges out of your secured sonarqube instance.
 
@@ -27,6 +28,7 @@ I would recommend that you create an additional user within your instance and gr
 - open `http://localhost:8080/KEY/METRIC.svg`
 
 **METRIC:** a metric key from the list down below
+
 **KEY:** the project key inside your sonarqube instance
 
 #### Metric Types
