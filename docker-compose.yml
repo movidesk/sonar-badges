@@ -1,8 +1,11 @@
 version: '3.8'
 services:
   sonar-badges:
-    build: .
+    image: ph1p/sonar-badges
     ports:
       - 8080:8080
-    env_file:
-      - .env
+    environment:
+      - USERNAME=
+      - PASSWORD=
+      - SERVER_URL=
+      - ENABLE_REQUEST_LOG=false
