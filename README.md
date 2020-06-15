@@ -25,11 +25,14 @@ I would recommend that you create an additional user within your instance and gr
 - download **docker-compose.yml**
 - set environment variables
 - run `docker-compose up -d`
-- open `http://localhost:8080/KEY/METRIC.svg`
+- open `http://localhost:8080/KEY/METRIC.svg?branch=BRANCH`
 
 **METRIC:** a metric key from the list down below
 
 **KEY:** the project key inside your sonarqube instance
+
+**BRANCH:** the analyzed branch (this is optional!)
+[https://github.com/mc1arke/sonarqube-community-branch-plugin](https://github.com/mc1arke/sonarqube-community-branch-plugin)
 
 #### Metric Types
 

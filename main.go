@@ -75,8 +75,19 @@ func main() {
 		metric := strings.TrimSuffix(c.Param("metric"), ".svg")
 
 		if contains(metrics, metric) && strings.HasSuffix(c.Param("metric"), ".svg") {
-			body := strings.NewReader(fmt.Sprintf(`metric=%v&project=%v`, metric, c.Param("project")))
-			req, requestError := http.NewRequest("POST", serverURL+"/api/project_badges/measure", body)
+
+			// queries
+			readerString := fmt.Sprintf(`metric=%v&project=%v`, metric, c.Param("project"))
+
+			// add branch parameter
+			if branch := c.Query("branch"); branch != "" {
+				readerString += fmt.Sprintf(`&branch=%v`, branch)
+			}
+
+			req, requestError := http.NewRequest("POST", serverURL+"/api/project_badges/measure",
+				// body
+				strings.NewReader(readerString),
+			)
 
 			if requestError != nil {
 				errorResponse(c, errors.New("there was an request error"))
