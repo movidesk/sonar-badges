@@ -9,8 +9,13 @@ This small project offers you a way to get your sonarqube badges out of your sec
 
 Set these variables:
 
+< v8.x.x
 - USERNAME (default: "")
 - PASSWORD (default: "")
+
+> v8.x.x
+- TOKEN (default: "")
+
 - SERVER_URL (default: "")
 
 I would recommend that you create an additional user within your instance and grant this user permissions.

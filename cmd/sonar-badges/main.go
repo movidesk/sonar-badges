@@ -13,6 +13,7 @@ import (
 )
 
 var username = os.Getenv("USERNAME")
+var token = os.Getenv("TOKEN")
 var password = os.Getenv("PASSWORD")
 var serverURL = os.Getenv("SERVER_URL")
 var port = os.Getenv("PORT")
@@ -70,7 +71,12 @@ func getBadge(c *gin.Context) {
 			errorResponse(c, errors.New("there was an request error"))
 		}
 
-		req.SetBasicAuth(username, password)
+		if token != "" {
+			req.SetBasicAuth(token, "")
+		} else {
+			req.SetBasicAuth(username, password)
+		}
+
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
 		resp, responseError := http.DefaultClient.Do(req)
