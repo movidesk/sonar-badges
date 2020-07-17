@@ -116,12 +116,19 @@ func setupRouter() *gin.Engine {
 }
 
 func main() {
-	if username == "" {
-		log.Fatal("please provide a username")
-	}
 
-	if password == "" {
-		log.Fatal("please provide a password")
+	if username == "" && password == "" && token == "" {
+		log.Fatal("please provide username and password or a token")
+	} else {
+		if token == "" {
+			if username == "" {
+				log.Fatal("please provide a username")
+			}
+
+			if password == "" {
+				log.Fatal("please provide a password")
+			}
+		}
 	}
 
 	if serverURL == "" {
