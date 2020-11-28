@@ -1,12 +1,13 @@
-version: '3.8'
+version: '3'
 services:
   sonar-badges:
-    # build: .
-    image: ph1p/sonar-badges:latest
+    build: .
+    # image: ph1p/sonar-badges:latest
     ports:
       - 8080:8080
     environment:
       - USERNAME=
       - PASSWORD=
       - SERVER_URL=
+      - TOKEN=
       - ENABLE_REQUEST_LOG=false

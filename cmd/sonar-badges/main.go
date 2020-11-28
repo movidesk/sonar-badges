@@ -103,6 +103,11 @@ func getBadge(c *gin.Context) {
 	}
 }
 
+func ping(c *gin.Context) {
+	c.String(200, "pong")
+	//errorResponse(c, errors.New("not valid"))
+}
+
 func setupRouter() *gin.Engine {
 	router := gin.New()
 
@@ -110,7 +115,8 @@ func setupRouter() *gin.Engine {
 		router = gin.Default()
 	}
 
-	router.GET("/:project/:metric", getBadge)
+	router.GET("/ping", ping)
+	router.GET("/api/:project/:metric", getBadge)
 
 	return router
 }
